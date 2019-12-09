@@ -66,7 +66,29 @@ public class Test {
         boolean catPlaying = false;
         if (temperature >= 25 && (temperature <= 35 || (temperature <= 45 && summer))){
             catPlaying =  true;
-        } 
+        }
         return catPlaying;
     }
+
+    public static boolean isOdd(int number){
+        boolean odd = false;
+        if (number % 2 != 0 && number > 0){
+            odd =  true;
+        }
+        return odd;
+    }
+
+    public static int sumOdd(int start, int end){
+        int oddSum = -1;
+        if(start>0 && end >0 && end>= start){
+            oddSum = 0;
+            for (int i=start;i<=end;i++){
+                if (isOdd(i)){
+                    oddSum += i;
+                }
+            }
+        }
+        return oddSum;
+    }
+
 }
