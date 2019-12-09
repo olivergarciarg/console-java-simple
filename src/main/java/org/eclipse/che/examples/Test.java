@@ -91,4 +91,16 @@ public class Test {
         return oddSum;
     }
 
+    public static int sumDigits(int number){
+        int result = -1;
+        String numberString = ((Integer)number).toString();
+        if(number >= 10){
+            result = 0;
+            for (int i=0;i<numberString.length();i++){
+                result += (int)numberString.charAt(i);
+            }
+        }
+        return result;
+    }
+
 }
