@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String... argvs) {
-        System.out.println(isPalindrome(11));
+        System.out.println(sumFirstAndLastDigit(1));
     }
 
     public static boolean areEqualByThreeDecimalPlaces(double num1, double num2){
@@ -116,6 +116,78 @@ public class Test {
         }
         if (reverse.equals(numberString)){result =true;}
         return result;
+    }
+
+    public static int sumFirstAndLastDigit(int number){
+        int result = -1;
+        String numberString;
+        if (number >= 0 ) {
+            numberString = ((Integer)number).toString();
+            result = Character.getNumericValue(numberString.charAt(0)) + Character.getNumericValue(numberString.charAt(numberString.length()-1));
+        }
+        return result;
+    }
+
+    public static int getEvenDigitSum(int number){
+        int result = -1;
+        if (number >= 0 ) {
+            String numberString = ((Integer)number).toString();
+            result = 0;
+            for (int i=0;i<numberString.length();i++){
+                if (("2468").contains(Character.toString(numberString.charAt(i))))
+                result += Character.getNumericValue(numberString.charAt(i));
+            }
+        }
+        return result;
+    }
+
+    public static boolean hasSharedDigit(int n1, int n2){
+        boolean result = false;
+        if (n1 >= 10 && n1<=99 && n2 >= 10 && n2<=99) {
+            String n1String = ((Integer)n1).toString();
+            String n2String = ((Integer)n2).toString();
+            for (int i=0;i<n2String.length();i++){
+                if ((n1String).contains(Character.toString(n2String.charAt(i)))){
+                    result = true;
+                }
+            }
+        }
+        return result;
+    }
+
+    public static boolean hasSameLastDigit(int n1, int n2, int n3){
+        boolean result = false;
+        if (n1 >= 10 && n1<=1000 && n2 >= 10 && n2<=1000) {
+            String n1String = ((Integer)n1).toString();
+            String n2String = ((Integer)n2).toString();
+            String n3String = ((Integer)n3).toString();
+            char n1LastChar = n1String.charAt(n1String.length()-1);
+            char n2LastChar = n2String.charAt(n2String.length()-1);
+            char n3LastChar = n3String.charAt(n3String.length()-1);
+            result = ((n1LastChar == n2LastChar)||(n1LastChar == n3LastChar)||(n2LastChar == n3LastChar));
+        }
+        return result;
+    }
+
+    public static boolean isValid(int n1){
+        return (n1 >= 10 && n1<=1000);
+    }
+
+    public static int getGreatestCommonDivisor(int n1, int n2){
+        int divisor = -1;
+        int min = Math.min(n1,n2);
+        int max = Math.max(n1,n2);
+        if(min>=10){
+            for (int i = 2;i<=(int)(min/2);i++){
+                if((n1%i==0)&&(n2%i==0)){
+                    divisor = i;
+                }
+            }
+            if(max%min==0){
+                divisor = min;
+            }
+        }
+        return divisor;
     }
 
 }
