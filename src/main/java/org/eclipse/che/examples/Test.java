@@ -190,4 +190,33 @@ public class Test {
         return divisor;
     }
 
+    public static void printFactors(int n){
+        String factors = "1";
+        if(n>=1){
+            for (int i = 2;i<=n;i++){
+                if(n%i==0){
+                    factors += " " + i;
+                }
+            }
+            System.out.println(factors);
+        }else{
+            System.out.println("Invalid Value");
+        }
+    }
+
+    public static boolean isPerfectNumber(int n){
+        int sumOfFactors = 0;
+        boolean result = false;
+        if(n>=1){
+            for (int i = 1;i<n;i++){
+                if(n%i==0){
+                    sumOfFactors += i;
+                }
+            }
+            result =(n==sumOfFactors);
+        }
+        return result;
+    }
+
+
 }
