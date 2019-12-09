@@ -1,10 +1,10 @@
 package org.eclipse.che.examples;
 
+import java.util.Scanner;
+
 public class Test {
     public static void main(String... argvs) {
-        String a = "Che";
-        System.out.println("Hello World " + a + "!");
-        areEqualByThreeDecimalPlaces(1.1,1.2);
+        System.out.println(isPalindrome(11));
     }
 
     public static boolean areEqualByThreeDecimalPlaces(double num1, double num2){
@@ -100,6 +100,21 @@ public class Test {
                 result += (int)numberString.charAt(i);
             }
         }
+        return result;
+    }
+
+    public static boolean isPalindrome(int number){
+        boolean result = false;
+        String numberString;
+        String reverse = "";
+        if (number < 0 ) {
+            number = -1*number;
+        }
+        numberString = ((Integer)number).toString();
+        for (int i=numberString.length()-1;i>=0;i--){
+            reverse += Character.toString(numberString.charAt(i));
+        }
+        if (reverse.equals(numberString)){result =true;}
         return result;
     }
 
