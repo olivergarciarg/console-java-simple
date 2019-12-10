@@ -6,7 +6,8 @@ public class Test {
     public static void main(String... argvs) {
         //System.out.println(reverse(12));
         //numberToWords(0);
-        getLargestPrime(21);
+        //getLargestPrime(21);
+        printSquareStar(9);
     }
 
     public static boolean areEqualByThreeDecimalPlaces(double num1, double num2){
@@ -324,15 +325,30 @@ public class Test {
         return largestPrime;
     }
 
-    public static void printSquareStar(int n){
+    public static void printSquareStar(int stars){
         String line;
-        if (n>5){
-            for (){}
-            System.out.println(line);
+        int row, column;
+        if (stars>=5){
+            for (row=1; row<=stars; row++){
+                line = "";
+                if (row==1 || row == stars){
+                    for (column=1; column<=stars; column++){
+                        line += "*";
+                    }
+                }else{
+                    for (column=1; column<=stars; column++){
+                        if (column ==1 || column == stars || column == row || column == (stars - row + 1 )){
+                            line += "*";
+                        }else{
+                            line += " ";
+                        }
+                    }
+                }
+                System.out.println(line);
+            }
         }else{
             System.out.println("Invalid Value");
         }
-
     }
 
 }
