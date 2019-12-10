@@ -324,4 +324,15 @@ public class Test {
         return largestPrime;
     }
 
+    public static void printSquareStar(int n){
+        String line;
+        if (n>5){
+            for (){}
+            System.out.println(line);
+        }else{
+            System.out.println("Invalid Value");
+        }
+
+    }
+
 }
