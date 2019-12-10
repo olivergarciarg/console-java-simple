@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String... argvs) {
-/*
+
+
+        /*
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter bith year: ");
@@ -19,6 +21,7 @@ public class Test {
 
         scanner.close();
         */
+        /*
         int result = 0;
         int inputCount = 0 ;
         Scanner scanner = new Scanner(System.in);
@@ -35,6 +38,7 @@ public class Test {
         }
         scanner.close();
         System.out.println(result);
+        */
     }
 
     public static boolean areEqualByThreeDecimalPlaces(double num1, double num2){
