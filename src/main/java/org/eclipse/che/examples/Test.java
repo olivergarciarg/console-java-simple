@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String... argvs) {
-
+        inputThenPrintSumAndAverage();
 
         /*
         Scanner scanner = new Scanner(System.in);
@@ -382,4 +382,29 @@ public class Test {
         }
     }
 
+    public static void inputThenPrintSumAndAverage(){
+        long sum = 0;
+        long avgDen = 0;
+        boolean isInt = true;
+        Scanner scanner = new Scanner(System.in);
+
+        while (isInt){
+            //System.out.println("number? ");
+            isInt = scanner.hasNextInt();
+            if(isInt){
+                sum += scanner.nextInt();
+                avgDen++;
+            }else{
+                isInt = false;
+                scanner.nextLine();
+            }
+        }
+        scanner.close();
+        if(avgDen != 0){
+            long avg = Math.round((double)sum/(double)avgDen);
+            System.out.println("SUM = " + sum + " AVG = " + avg);
+        }else{
+            System.out.println("SUM = 0 AVG = 0");
+        }
+    }
 }
