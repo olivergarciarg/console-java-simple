@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String... argvs) {
-        System.out.println(sumFirstAndLastDigit(1));
+        System.out.println(reverse(12));
+        numberToWords(0);
     }
 
     public static boolean areEqualByThreeDecimalPlaces(double num1, double num2){
@@ -218,5 +219,75 @@ public class Test {
         return result;
     }
 
+    public static void numberToWords(int n){
+        int newN, remainder, digitCount;
+        if(n>=0){
+            newN = reverse(n);
+            digitCount = getDigitCount(newN);
+            for(int i = 0; i<digitCount; i++){
+                remainder = newN % 10;
+                switch (remainder){
+                    case 0:
+                        System.out.println("Zero");
+                        break;
+                    case 1:
+                        System.out.println("One");
+                        break;
+                    case 2:
+                        System.out.println("Two");
+                        break;
+                    case 3:
+                        System.out.println("Three");
+                        break;
+                    case 4:
+                        System.out.println("Four");
+                        break;
+                    case 5:
+                        System.out.println("Five");
+                        break;
+                    case 6:
+                        System.out.println("Six");
+                        break;
+                    case 7:
+                        System.out.println("Seven");
+                        break;
+                    case 8:
+                        System.out.println("Eight");
+                        break;
+                    case 9:
+                        System.out.println("Nine");
+                        break;
+                }
+                newN = (int)newN/10;
+            }
+            for (int i =0; i<(getDigitCount(n)-getDigitCount(reverse(n)));i++){
+                System.out.println("Zero");
+            }
+        }else{
+            System.out.println("Invalid Value");
+        }
+    }
 
+    public static int reverse(int number){
+        String numberString;
+        String reverseString = "";
+        numberString = ((Integer)number).toString();
+        for (int i=numberString.length()-1;i>=1;i--){
+            reverseString += Character.toString(numberString.charAt(i));
+        }
+        if (numberString.charAt(0)=='-'){
+            reverseString = "-" + reverseString;
+        }else{
+            reverseString += Character.toString(numberString.charAt(0));
+        }
+        return Integer.parseInt(reverseString);
+    }
+
+    public static int getDigitCount(int number){
+        int digitCount = -1;
+        if (number >=0){
+            digitCount = (((Integer)number).toString()).length();
+        }
+        return digitCount;
+    }
 }
