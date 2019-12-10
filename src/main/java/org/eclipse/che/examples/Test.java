@@ -407,4 +407,20 @@ public class Test {
             System.out.println("SUM = 0 AVG = 0");
         }
     }
+
+    public static int getBucketCount(double width, double height, double areaPerBucket, int extraBuckets){
+        int result = -1;
+        if (width>0 && height>0 && areaPerBucket>0 && extraBuckets>0){
+            result = (int)Math.round((width*height)/areaPerBucket) - extraBuckets;
+        }
+        return result;
+    }
+
+    public static int getBucketCount(double width, double height, double areaPerBucket){
+        int result = -1;
+        if (width>0 && height>0 && areaPerBucket>0){
+            result = (int)Math.round((width*height)/areaPerBucket);
+        }
+        return result;
+    }
 }
