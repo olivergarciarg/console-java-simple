@@ -4,10 +4,37 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String... argvs) {
-        //System.out.println(reverse(12));
-        //numberToWords(0);
-        //getLargestPrime(21);
-        printSquareStar(9);
+/*
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter bith year: ");
+        int yearOfBirth = scanner.nextInt();
+
+        System.out.println("Enter your name: ");
+        scanner.nextLine();
+        String name = scanner.nextLine();
+
+        int age = 2018 - yearOfBirth;
+        System.out.println("Your name is " + name + " and your age is " + age);
+
+        scanner.close();
+        */
+        int result = 0;
+        int inputCount = 0 ;
+        Scanner scanner = new Scanner(System.in);
+        while (inputCount<10){
+            System.out.println("number? ");
+            if (scanner.hasNextInt()){
+                result += scanner.nextInt();
+                inputCount++;
+            }else{
+                System.out.println("Invalid number");
+                scanner.nextLine();
+            }
+
+        }
+        scanner.close();
+        System.out.println(result);
     }
 
     public static boolean areEqualByThreeDecimalPlaces(double num1, double num2){
