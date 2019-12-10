@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String... argvs) {
-        System.out.println(reverse(12));
-        numberToWords(0);
+        //System.out.println(reverse(12));
+        //numberToWords(0);
+        getLargestPrime(21);
     }
 
     public static boolean areEqualByThreeDecimalPlaces(double num1, double num2){
@@ -302,4 +303,25 @@ public class Test {
         }
         return packOk;
     }
+
+    public static int getLargestPrime(int n){
+        int largestPrime = -1;
+        if (n>1){
+            int j;
+            boolean isPrime;
+            for (int prime = 1; prime<n; prime++){
+                // isPrimeI
+                isPrime = true;
+                j = 2;
+                while ((isPrime) == true && (j < prime)){
+                    if (prime%j == 0) isPrime = false;
+                    j++;
+                }
+                if (isPrime && (n%prime == 0)) largestPrime = prime;
+            }
+            if(largestPrime == 1) largestPrime = n;
+        }
+        return largestPrime;
+    }
+
 }
