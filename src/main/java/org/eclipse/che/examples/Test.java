@@ -290,4 +290,16 @@ public class Test {
         }
         return digitCount;
     }
+
+    public static boolean canPack(int bigCount, int smallCount, int goal){
+        boolean packOk = false;
+        int fittingBig = 0;
+        int fittingSmall = 0;
+        if (goal >0){
+            fittingBig = Math.min((int)(goal/(5)),bigCount);
+            fittingSmall += Math.min((int)(goal- (5*fittingBig)),smallCount);
+            if (goal == (5*fittingBig) + fittingSmall) packOk = true;
+        }
+        return packOk;
+    }
 }
