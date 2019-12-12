@@ -1,3 +1,5 @@
+package org.eclipse.che.examples;
+
 public class Point {
     // write your code here
     private int x;
