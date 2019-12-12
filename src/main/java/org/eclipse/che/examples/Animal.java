@@ -15,4 +15,10 @@ public class Animal {
         this.size=size;
         this.weight=weight;
     }
+
+    public void eat(){System.out.println("Animal eating");}
+    public void move(int speed){
+        System.out.println("Animal moving at " + speed);
+    }
+
 }
