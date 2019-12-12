@@ -1,4 +1,4 @@
-package org.eclipse.che.s2;
+package org.eclipse.che.examples;
 
 public class Outlander extends Car {
 
