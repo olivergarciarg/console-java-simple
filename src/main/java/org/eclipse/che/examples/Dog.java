@@ -46,7 +46,4 @@ public class Dog extends Animal{
         moveLegs(speed);
         super.move(speed);
     }
-
-
-
 }
