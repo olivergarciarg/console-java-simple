@@ -1,4 +1,4 @@
-package org.eclipse.che.examples;
+package org.eclipse.che.examples.bedroom;
 
 public class Bed {
     private int pillows;
