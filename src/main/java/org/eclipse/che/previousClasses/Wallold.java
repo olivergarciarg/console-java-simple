@@ -1,15 +1,15 @@
 package org.eclipse.che.examples;
 
-public class Wall {
+public class Wallold {
 
     private double width;
     private double height;
 
-    public Wall(){
+    public Wallold(){
         this(0,0);
     }
 
-    public Wall(double width, double height){
+    public Wallold(double width, double height){
         this.width=Math.max(0,width);
         this.height=Math.max(0,height);
     }
