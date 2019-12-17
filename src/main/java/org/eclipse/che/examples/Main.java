@@ -1,5 +1,6 @@
 package org.eclipse.che.examples;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -26,10 +27,13 @@ public class Main {
     }
 
     public static int[] sortIntegers(int[] array) {
-        int[] sortedArray = new int[array.length];
+        int[] sortedArray = Arrays.copyOf(array, array.length);
+        //int[] sortedArray = new int[array.length];
+        /*
         for (int i = 0; i < array.length; i++) {
             sortedArray[i] += array[i];
         }
+        */
         boolean flag = true;
         int temp;
         while (flag) {
